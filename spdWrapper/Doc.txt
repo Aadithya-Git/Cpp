@@ -1,0 +1,19 @@
+
+----------------------------------------------------------------
+
+To build conan package spd_wrapper:
+
+conan create . --name=spd_wrapper --version=1.0 --build=missing
+
+----------------------------------------------------------------
+
+To compile and run the external project:
+
+cd build
+conan install .. --build=missing --output-folder=.
+cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+cmake --build .
+
+then run the executable
+
+----------------------------------------------------------------
